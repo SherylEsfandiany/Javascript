@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 JS</title>
+</head>
+<body>
+    <table cellpadding="10" align="center">
+        <thead>
+            <tr bgcolor="grey">
+                <th>NO</th>
+                <th>NAMA</th>
+                <th>JABATAN</th>
+                <th>AGAMA</th>
+                <th>GAJI POKOK</th>
+                <th>TUNJANGAN JABATAN</th>
+                <th>TUNJANGAN KESEHATAN</th>
+                <th>GAJI KOTOR</th>
+                <th>ZAKAT PROFESI</th>
+                <th>TAKE HOME PAY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script language="javascript">
+                var noA, noB, noC, noD, warna, agama, jabatan, gapok, tunjab, tunkes, gator, zakat, thp;
+                for(noA = 1; noA <=25; noA++){
+                    warna = (noA % 2 == 0) ? 'aqua' :  'yellow';
+                    agama = (noA % 2 == 0) ? 'Non Muslim' : 'Muslim';
+                    var jabatan = "manager";
+                    switch(jabatan){
+                    case 'manager' : gapok = 15000000; break;
+                    case 'asisten manager' : gapok = 10000000; break;
+                    case 'supervisor' : gapok = 7000000; break;
+                    case 'staff' : gapok = 4000000; break;
+                    default : gapok = 0;
+                }
+                let tunjab = 0.2 * gapok;
+                let tunkes = 0.1 * gapok;
+                let gator = gapok + tunjab + tunkes;
+                if(agama == 'Muslim' && gator >= 7000000) zakat = 0.025 * gator;
+                else zakat = "0";
+                let thp = gator - zakat;
+                    document.write(`
+                        <tr bgcolor=${warna}>
+                            <td>${noA}</td>
+                            <td>Pegawai ${noA}</td>
+                            <td>${jabatan}</td>
+                            <td>${agama}</td>
+                            <td>Rp. ${gapok}</td>
+                            <td>Rp. ${tunjab}</td>
+                            <td>Rp. ${tunkes}</td>
+                            <td>Rp. ${gator}</td>
+                            <td>Rp. ${zakat}</td>
+                            <td>Rp. ${thp}</td>
+                        </tr>
+                    `)
+                }
+                for(noB = 26; noB <=50; noB++){
+                    warna = (noB % 2 == 0) ? 'aqua' : 'yellow';
+                    agama = (noB % 2 == 0) ? 'Non Muslim' : 'Muslim';
+                    var jabatan = "asisten manager";
+                    switch(jabatan){
+                    case 'manager' : gapok = 15000000; break;
+                    case 'asisten manager' : gapok = 10000000; break;
+                    case 'supervisor' : gapok = 7000000; break;
+                    case 'staff' : gapok = 4000000; break;
+                    default : gapok = 0;
+                }
+                let tunjab = 0.2 * gapok;
+                let tunkes = 0.1 * gapok;
+                let gator = gapok + tunjab + tunkes;
+                if(agama == 'Muslim' && gator >= 7000000) zakat = 0.025 * gator;
+                else zakat = "0";
+                let thp = gator - zakat;
+                    document.write(`
+                        <tr bgcolor=${warna}>
+                            <td>${noB}</td>
+                            <td>Pegawai ${noB}</td>
+                            <td>${jabatan}</td>
+                            <td>${agama}</td>
+                            <td>Rp. ${gapok}</td>
+                            <td>Rp. ${tunjab}</td>
+                            <td>Rp. ${tunkes}</td>
+                            <td>Rp. ${gator}</td>
+                            <td>Rp. ${zakat}</td>
+                            <td>Rp. ${thp}</td>
+                        </tr>
+                    `)
+                }
+                for(noC = 51; noC <=75; noC++){
+                    warna = (noC % 2 == 0) ? 'aqua' : 'yellow';
+                    agama = (noC % 2 == 0) ? 'Non Muslim' : 'Muslim';
+                    var jabatan = "supervisor";
+                    switch(jabatan){
+                    case 'manager' : gapok = 15000000; break;
+                    case 'asisten manager' : gapok = 10000000; break;
+                    case 'supervisor' : gapok = 7000000; break;
+                    case 'staff' : gapok = 4000000; break;
+                    default : gapok = 0;
+                }
+                let tunjab = 0.2 * gapok;
+                let tunkes = 0.1 * gapok;
+                let gator = gapok + tunjab + tunkes;
+                if(agama == 'Muslim' && gator >= 7000000) zakat = 0.025 * gator;
+                else zakat = "0";
+                let thp = gator - zakat;
+                    document.write(`
+                        <tr bgcolor=${warna}>
+                            <td>${noC}</td>
+                            <td>Pegawai ${noC}</td>
+                            <td>${jabatan}</td>
+                            <td>${agama}</td>
+                            <td>Rp. ${gapok}</td>
+                            <td>Rp. ${tunjab}</td>
+                            <td>Rp. ${tunkes}</td>
+                            <td>Rp. ${gator}</td>
+                            <td>Rp. ${zakat}</td>
+                            <td>Rp. ${thp}</td>
+                        </tr>
+                    `)
+                }
+                for(noD = 76; noD <=100; noD++){
+                    warna = (noD % 2 == 0) ? 'aqua' : 'yellow';
+                    agama = (noD % 2 == 0) ? 'Non Muslim' : 'Muslim';
+                    var jabatan = "staff";
+                    switch(jabatan){
+                    case 'manager' : gapok = 15000000; break;
+                    case 'asisten manager' : gapok = 10000000; break;
+                    case 'supervisor' : gapok = 7000000; break;
+                    case 'staff' : gapok = 4000000; break;
+                    default : gapok = 0;
+                }
+                let tunjab = 0.2 * gapok;
+                let tunkes = 0.1 * gapok;
+                let gator = gapok + tunjab + tunkes;
+                if(agama == 'Muslim' && gator >= 7000000) zakat = 0.025 * gator;
+                else zakat = "0";
+                let thp = gator - zakat;
+                    document.write(`
+                        <tr bgcolor=${warna}>
+                            <td>${noD}</td>
+                            <td>Pegawai ${noD}</td>
+                            <td>${jabatan}</td>
+                            <td>${agama}</td>
+                            <td>Rp. ${gapok}</td>
+                            <td>Rp. ${tunjab}</td>
+                            <td>Rp. ${tunkes}</td>
+                            <td>Rp. ${gator}</td>
+                            <td>Rp. ${zakat}</td>
+                            <td>Rp. ${thp}</td>
+                        </tr>
+                    `)
+                }
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
