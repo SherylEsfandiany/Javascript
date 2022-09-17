@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas 4 js</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <h3>Pembelian Barang dengan Konversi Kurs</h3>
+    <form id="form">
+      <div class="mb-3 row">
+        <label for="nama_pembeli" class="col-sm-2 col-form-label">Nama Pembeli</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="nama">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="nama_barang" class="col-sm-2 col-form-label">Nama Barang</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="barang">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="harga_barang" class="col-sm-2 col-form-label">Harga Barang</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="harga">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="jumlah_barang" class="col-sm-2 col-form-label">Jumlah Barang</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="jumlah">
+        </div>
+      </div>
+      <div>
+        <div class="mb-3 row">
+          <label for="jumlah_barang" class="col-sm-2 col-form-label">Valuta Asing</label>
+          <div class="col-sm-10">
+            <select class="form-select" aria-label="Default select example" onchange="konversiKurs()" name="valas">
+              <option selected>--Pilih Valas--</option>
+              <option value="14917">-- USD --</option>
+              <option value="10590">-- SGD --</option>
+              <option value="14918">-- EUR --</option>
+            </select>
+          </div>
+        </div>
+        <div class="alert alert-primary" role="alert" id="isi"></div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    function konversiKurs() {
+      let nama, barang, harga=0, jumlah=0, valas=0, total=0;
+
+      let form = document.getElementById('form');
+      nama = form.nama.value;
+      barang = form.barang.value;
+      harga = form.harga.value;
+      jumlah = form.jumlah.value;
+      valas = form.valas.value;
+
+      total= harga * jumlah * valas;
+
+      document.getElementById('isi').innerHTML = `
+      Data Pembelian:
+      <br/>Nama Pembeli: ${nama}
+      <br/>Nama Barang: ${barang}
+      <br/>Harga Barang: ${harga}
+      <br/>Jumlah Barang: ${jumlah}
+      <br/>Valuta Asing: ${valas}
+      <br/>Total Bayar: ${total}
+      `;
+    };
+  </script>
+</html>
